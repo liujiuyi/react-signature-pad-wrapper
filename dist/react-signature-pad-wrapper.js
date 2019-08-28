@@ -285,6 +285,9 @@ SignaturePad.prototype._strokeUpdate = function (event) {
       this._drawCurve(curve, widths.start, widths.end);
     }
 
+    if (!(this._data && this._data[this._data.length - 1])) {
+      this._data = [[]];
+    }
     this._data[this._data.length - 1].push({
       x: point.x,
       y: point.y,
